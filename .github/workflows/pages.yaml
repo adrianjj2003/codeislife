@@ -1,0 +1,36 @@
+# .github/workflows/pages.yml – build & deploy CRA to GitHub Pages
+name: Deploy React to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]          # ejecuta en cada push a main
+  workflow_dispatch:            # botón "Run workflow" opcional
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install & Build
+        run: |
+          npm ci
+          npm run build
+          cp build/index.html build/404.html   # rutas SPA
+          touch build/.nojekyll                # evita Jekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./build
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/deploy-pages@v4
