@@ -20,11 +20,29 @@ const NoticiasMuseos = () => {
     const idiomaActual = i18n.language;
     const apiLang = langMap[idiomaActual] || "es";
 
-    fetch(
-      `https://newsapi.org/v2/everything?qInTitle=(museo%20OR%20museos)&language=${apiLang}&sortBy=publishedAt&apiKey=b0cad17bd70c40949972c75bcf54228e`
-    )
-      .then((res) => res.json())
-      .then((data) => setNoticias(data.articles.slice(0, 7)));
+
+    fetch(url, {
+      headers: {
+        "X-Api-Key": import.meta.env.VITE_NEWS_KEY   // tu clave en variable de entorno
+      }
+    })
+      .then(res => (res.ok ? res.json() : Promise.reject(res)))
+      .then(data => {
+        const arts = data.articles?.slice(0, 7) ?? [];   // evita undefined
+        setNoticias(arts);
+      })
+      .catch(() => {
+        // Copia local de respaldo si la API rechaza la petición
+        setNoticias([
+          {
+            title: t("apiDown"),
+            description: t("apiDownDesc"),
+            url: "https://newsapi.org/",
+            urlToImage: noticiaImagen
+          }
+        ]);
+      });
+
   }, [i18n.language]);
 
   useEffect(() => {
