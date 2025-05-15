@@ -21,27 +21,32 @@ const NoticiasMuseos = () => {
     const apiLang = langMap[idiomaActual] || "es";
 
 
-    fetch(url, {
-      headers: {
-        "11a2d4c988a34982a604471fe57694d7": import.meta.env.VITE_NEWS_KEY   // tu clave en variable de entorno
+    const url =
+  "https://newsapi.org/v2/everything?qInTitle=(museo%20OR%20museos)&language=es&sortBy=publishedAt";
+
+fetch(url, {
+  headers: {
+    "X-Api-Key": process.env.REACT_APP_NEWS_KEY      // lee la clave del .env
+  }
+})
+  .then(res => (res.ok ? res.json() : Promise.reject(res)))
+  .then(data => {
+    const arts = data.articles?.slice(0, 7) ?? [];
+    setNoticias(arts);
+  })
+  .catch(() => {
+    // respaldo: evita que la página se rompa si la llamada falla
+    setNoticias([
+      {
+        title: "Noticias no disponibles",
+        description:
+          "La API de noticias rechazó la petición o excedió el límite diario.",
+        url: "https://newsapi.org/",
+        urlToImage: "/fallback.jpg"
       }
-    })
-      .then(res => (res.ok ? res.json() : Promise.reject(res)))
-      .then(data => {
-        const arts = data.articles?.slice(0, 7) ?? [];   // evita undefined
-        setNoticias(arts);
-      })
-      .catch(() => {
-        // Copia local de respaldo si la API rechaza la petición
-        setNoticias([
-          {
-            title: t("apiDown"),
-            description: t("apiDownDesc"),
-            url: "https://newsapi.org/",
-            urlToImage: noticiaImagen
-          }
-        ]);
-      });
+    ]);
+  });
+
 
   }, [i18n.language]);
 
