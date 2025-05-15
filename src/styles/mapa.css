@@ -1,0 +1,155 @@
+.fondo-mapa {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.829);
+  width: 100%;
+  top: 0px;
+}
+
+.mapa {
+  top: -20px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.fondo-mapa img {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  filter: drop-shadow(0 0 10px rgba(247, 247, 247, 0.623))
+    drop-shadow(0 0 20px rgba(247, 247, 247, 0.5));
+  position: relative;
+  z-index: 0;
+}
+
+#america {
+  position: absolute;
+  top: 40%;
+  left: 22%;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#africa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#europa {
+  position: absolute;
+  top: 35%;
+  left: 53%;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#asia {
+  position: absolute;
+  top: 36%;
+  left: 70%;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#oceania {
+  position: absolute;
+  top: 67%;
+  right: 17%;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 15px 50px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.manual {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 8px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  z-index: 10;
+}
+
+.manual-selector {
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #24201f;
+  color: white;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.manual > .btn-manual {
+  background-color: white;
+  color: #24201f;
+  font-weight: bolder;
+}
+
+button:hover {
+  background-color: #24201f;
+}
+
+.btn-manual:hover,
+.btn-manual:focus {
+  transform: scale(1.1);
+}
+
+select {
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  width: 100%;
+}

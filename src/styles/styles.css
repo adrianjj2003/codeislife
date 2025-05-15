@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("../assets/img/ee.jpg") center/cover no-repeat;
+  position: sticky;
+  background-attachment: fixed;
+}
+.main-header {
+  padding-top: 20px;
+  background-color: #24201f; /* fondo oscuro como en la imagen */
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  padding-bottom: 10px;
+}
+
+/* Estilo de la parte superior */
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.search-lang {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  position: absolute;
+  left: 60px;
+}
+
+.logo {
+  letter-spacing: 0.3em;
+  font-size: 1.8rem;
+  margin: 0;
+  font-size: 2em;
+}
+
+/* Navegación */
+.main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  border-top: 1px solid #464444;
+  padding: 10px 0;
+  margin-top: 40px;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+.main-nav button {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #24201f;
+  border: 0px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+}
+
+.main-nav button:hover {
+  background-color: white;
+  color: #24201f;
+}
+
+/* Hero con imagen de fondo */
+.hero {
+  background: url("../assets/img/museo2.jpg") center/cover no-repeat;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .overlay {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h2 {
+  flex: 1;
+  color: white;
+  font-size: 2rem;
+  background-color: #a59a9a38;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+footer {
+  margin-top: 200px;
+  min-height: 40vh; /* Cambiar a min-height en lugar de height */
+  background-color: #24201f; /* Fondo oscuro */
+  padding: 30px 0; /* Ajuste de padding para un buen espacio */
+  position: relative; /* Para que se posicione al final cuando sea necesario */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  bottom: 0px;
+}
+
+.textoFooter {
+  text-align: center;
+  color: white;
+  max-width: 600px;
+  margin: 0px auto;
+  font-size: 1rem;
+  padding: 50px 0px;
+}
+
+.textoFooter p:nth-child(2) {
+  margin-top: 25px;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+}
+.redes span {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.redes span img {
+  max-width: 2vw;
+}
+
+.faja-roja {
+  height: 200px;
+  background: url("../assets/img/fondo-rojo.jpeg") center/cover no-repeat;
+  /*background-color: #cc0000;*/
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.destacado {
+  margin-top: 200px;
+  background: linear-gradient(to bottom, #fff, #000); /* Degradado vertical */
+  padding: 20px;
+  position: relative;
+  height: 800px; /* Ajusta a tu necesidad */
+  overflow: hidden; /* Corta lo que sobresale */
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 10px;
+  z-index: 1;
+}
+
+.contenedor-grid img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(20px); /* Empieza 20px más abajo */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.contenedor-grid img.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contenedor-grid img:nth-child(3n + 1) {
+  margin-top: 50px;
+}
+.contenedor-grid img:nth-child(3n + 3) {
+  margin-top: 50px;
+}
+
+.descubre {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  padding: 24px 48px;
+  border: none;
+  font-weight: bold;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  cursor: pointer;
+  font-size: 25px;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.layout-con-fondo {
+  background-image: url('../assets/img/ee.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-con-fondo main {
+  flex: 1;                 /* El contenido principal se expande */
+}
+
+
+.descubre:hover {
+  color: #fff;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .contenedor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contenedor-grid img {
+    width: 140px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contenedor-grid img {
+    width: 100px;
+    height: 140px;
+  }
+}
+
+/* En pantallas pequeñas */
+@media (max-width: 1200px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-lang {
+    position: static; /* Quitar absolute para que no se monte encima */
+    margin-bottom: 10px;
+    gap: 20px; /* Mantener espacio entre buscar e idioma */
+  }
+
+  .logo {
+    margin-top: 10px; /* Separarlo un poco del search-lang */
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}

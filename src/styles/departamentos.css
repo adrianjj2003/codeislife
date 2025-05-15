@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+.departamentos-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+  margin: 0.5rem;
+  border-radius: 5px;
+}
+
+.departamento-item {
+  font-weight: 500;
+  background-color: #fde8e8;
+  margin: 6px 0;
+  padding: 15px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #24201f;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
+.departamento-item:hover {
+  background-color: #d4b9b2;
+  font-weight: bold;
+  font-size: large;
+  color: #24201f;
+}

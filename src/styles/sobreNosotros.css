@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgba(228, 33, 33, 0.09);
+}
+
+/* --------- PORTADA --------- */
+.portada {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.imagen-superpuesta {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.imagen-superpuesta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 30%,
+    rgba(0, 0, 0, 0) 50%
+  ); /*Difuminado de la imgaen a oscuro*/
+}
+
+.titulo {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.titulo span {
+  font-size: 64px;
+  line-height: 1.2;
+}
+
+/* --------- SECCIONES --------- */
+.intro-section {
+  display: flex;
+  justify-content: center; /* Añadido */
+  align-items: center;
+  gap: 60px;
+  padding: 60px 10%;
+  background-color: #ffecec;
+  flex-wrap: wrap;
+}
+
+.intro h2 {
+  color: #ffecec;
+}
+
+.seccion-medio,
+.seccion-final {
+  display: flex;
+  gap: 60px;
+  padding: 60px 10%;
+  align-items: center;
+  background-color: #ffecec;
+  flex-wrap: wrap;
+}
+
+.imagen img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  height: auto;
+}
+
+.textoPresentacion {
+  flex: 1 1 600px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 30px;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 1px;
+  line-height: 25px;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 1024px) {
+  .intro-section {
+    flex-direction: row; /* Asegura que los elementos estén en fila */
+  }
+
+  .imagen img {
+    max-width: 400px; /* Reduce el tamaño máximo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+
+  .textoPresentacion {
+    flex: 1; /* Permite que el texto ocupe el espacio restante */
+    font-size: 16px; /* Ajusta el tamaño de la fuente */
+    padding: 20px; /* Reduce el padding */
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+}

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+.art-card {
+    background-color: #fde8e8; 
+    padding: 1rem; 
+    padding-bottom: 3rem;
+    border-radius: 0.5rem; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+  
+ 
+.art-card img {
+    width: 100%; 
+    height: 200px;
+    object-fit: contain; 
+    border-radius: 0.25rem; 
+    background-color: #fde8e8;
+}
+  
+.art-card h3 {
+    font-weight: 600; 
+    margin-top: 0.5rem; 
+    text-align: center;
+}
+  
+.art-card p {
+    margin: 0.25rem 0; 
+}
+  
+.art-card a {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.875rem; 
+    color: #2563eb; 
+    display: block; 
+    text-decoration: none; 
+    text-align: end;
+}
+  
+.art-card a:hover {
+    text-decoration: underline; 
+}
+  
+.art-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); 
+}
+

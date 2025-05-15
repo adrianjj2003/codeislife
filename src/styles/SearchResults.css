@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+/* Centrar el contenido de la página */
+.search-results-container {
+  background-color: #fce4ec; /* Rosa claro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  width: fit-content;
+  font-family: "Playfair", serif;
+}
+
+/* Título */
+.search-results-container h1 {
+  font-family: "Playfair", serif;
+  font-size: 28px;
+  color: #494747; /* Rosa más intenso */
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* Estilo de los resultados */
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Estilo de cada tarjeta */
+.result-card {
+  background-color: #fce4ec; /* Fondo rosa claro para las tarjetas */
+  border-radius: 12px; /* Bordes más redondeados */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+  color: #333; /* Aseguramos que el texto sea oscuro */
+}
+
+.result-card img {
+  padding: 10px;
+  border-radius: 10%;
+  width: 80%;
+  height: 80%;
+}
+
+.result-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-results-container p {
+  font-size: 18px;
+  color: #333; /* Color oscuro para el texto */
+}
+
+/* Mensaje cuando no se encuentran resultados */
+.results-container p {
+  font-size: 20px;
+  color: #292527; /* Rosa más fuerte */
+  font-weight: bold;
+}
+
+.back-button {
+  background-color: #fce4ec; /* Gris muy oscuro */
+  color: #212121; /* Blanco grisáceo */
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 30px auto 10px;
+  display: block; /* Para que el margin auto funcione */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #f7e6ec;
+  transform: translateY(-2px);
+}
