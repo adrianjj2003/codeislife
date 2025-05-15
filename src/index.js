@@ -8,14 +8,16 @@ import { I18nextProvider } from "react-i18next";
 import { BrowserRouter } from "react-router-dom";
 
 import i18n from "./i18n";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
-      <BrowserRouter>
+      {/* basename apunta a "/codeislife" (lo inyecta CRA a partir de "homepage") */}
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App />
       </BrowserRouter>
-      {/* Proveemos el contexto de i18n */}
     </I18nextProvider>
   </React.StrictMode>
 );
