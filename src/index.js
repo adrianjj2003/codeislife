@@ -10,6 +10,7 @@ import { BrowserRouter } from "react-router-dom";
 import i18n from "./i18n";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+console.log("PUBLIC_URL =", process.env.PUBLIC_URL);
 
 root.render(
   <React.StrictMode>
