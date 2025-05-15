@@ -23,7 +23,7 @@ const NoticiasMuseos = () => {
 
     fetch(url, {
       headers: {
-        "X-Api-Key": import.meta.env.VITE_NEWS_KEY   // tu clave en variable de entorno
+        "11a2d4c988a34982a604471fe57694d7": import.meta.env.VITE_NEWS_KEY   // tu clave en variable de entorno
       }
     })
       .then(res => (res.ok ? res.json() : Promise.reject(res)))
