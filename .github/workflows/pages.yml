@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install & Build
         run: |
-          npm ci
+          npm ci --legacy-peer-deps   # ignora el conflicto
           npm run build
           cp build/index.html build/404.html     # rutas SPA
           touch build/.nojekyll                  # evita Jekyll
