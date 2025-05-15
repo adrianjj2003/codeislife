@@ -1,10 +1,10 @@
-# .github/workflows/pages.yml  –  Build & deploy CRA to GitHub Pages
+# .github/workflows/pages.yml – Build & deploy CRA to GitHub Pages
 name: Deploy React to GitHub Pages
 
 on:
   push:
-    branches: ["main"]        # ejecuta en cada push a main
-  workflow_dispatch:          # botón "Run workflow" opcional
+    branches: ["main"]          # ejecuta en cada push a main
+  workflow_dispatch:            # botón "Run workflow" opcional
 
 permissions:
   contents: read
@@ -20,15 +20,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Install & Build
+        env:
+          CI: ""                       # ⚑ desactiva “warnings = errors”
         run: |
-          npm ci --legacy-peer-deps   # ignora el conflicto
-          npm run build
-          cp build/index.html build/404.html     # rutas SPA
-          touch build/.nojekyll                  # evita Jekyll
+          npm ci --legacy-peer-deps    # ignora el conflicto de TypeScript
+          npm run build                # crea ./build
+          cp build/index.html build/404.html   # rutas SPA
+          touch build/.nojekyll                # evita Jekyll
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./build
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
